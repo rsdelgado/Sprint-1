@@ -1,12 +1,21 @@
 package com.bootcamp.sprint1.service;
 
+import com.bootcamp.sprint1.dto.request.PostDTOReq;
+import com.bootcamp.sprint1.repository.IPostRepository;
 import org.springframework.stereotype.Service;
 
 @Service
 public class PostServiceImp implements IPostService{
-    private final IPostService postService;
+    private final IPostRepository postRepository;
 
-    public PostServiceImp(IPostService postService) {
-        this.postService = postService;
+
+
+    public PostServiceImp(IPostRepository postRepository) {
+        this.postRepository = postRepository;
+    }
+
+    @Override
+    public void publishPost(PostDTOReq postDTOReq) {
+
     }
 }
