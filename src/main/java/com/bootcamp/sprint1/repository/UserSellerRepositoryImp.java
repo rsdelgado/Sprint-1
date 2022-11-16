@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Repository
-public class UserSellerRepositoryImp implements ICrudRepository{
+public class UserSellerRepositoryImp implements IUserSellerRepository{
     List<UserSeller> sellers = new ArrayList<>();
 
     @Override

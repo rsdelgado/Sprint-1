@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Repository
-public class PostRepositoryImp implements ICrudRepository{
+public class PostRepositoryImp implements IPostRepository{
     List<Post> posts = new ArrayList<>();
     @Override
     public Object create(Object o) {
