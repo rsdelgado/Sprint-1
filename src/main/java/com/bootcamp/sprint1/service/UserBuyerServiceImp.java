@@ -1,9 +1,9 @@
 package com.bootcamp.sprint1.service;
 
+import com.bootcamp.sprint1.dto.respose.FollowedListDTORes;
 import com.bootcamp.sprint1.repository.IUserBuyerRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 
 @Service
 public class UserBuyerServiceImp implements IUserBuyerService{
@@ -13,4 +13,13 @@ public class UserBuyerServiceImp implements IUserBuyerService{
         this.userBuyerRepository = userBuyerRepository;
     }
 
+    @Override
+    public void follow(Integer userId, Integer userIdToFollow) {
+
+    }
+
+    @Override
+    public FollowedListDTORes getFollowed(Integer userId) {
+        return null;
+    }
 }
