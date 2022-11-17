@@ -38,4 +38,9 @@ public class UserBuyerServiceImp implements IUserBuyerService{
     public PostFollowedByDateDTORes getLastPostsSortedDate(String order) {
         return null;
     }
+
+    @Override
+    public FollowedListDTORes getFollowedSortedByName(String order) {
+        return null;
+    }
 }

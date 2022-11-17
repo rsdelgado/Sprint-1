@@ -22,4 +22,9 @@ public class UserSellerServiceImp implements IUserSellerService{
     public FollowerListDTORes getFollowers(Integer userId) {
         return null;
     }
+
+    @Override
+    public FollowerListDTORes getFollowersSortedByName(String order) {
+        return null;
+    }
 }
