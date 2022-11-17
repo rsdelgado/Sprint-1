@@ -1,15 +1,17 @@
 package com.bootcamp.sprint1.service;
 
-import com.bootcamp.sprint1.dto.respose.FollowedListDTORes;
-import com.bootcamp.sprint1.dto.respose.FollowerListDTORes;
-import com.bootcamp.sprint1.dto.respose.PostFollowedByDateDTORes;
-import com.bootcamp.sprint1.dto.respose.UserDTORes;
+import com.bootcamp.sprint1.dto.respose.*;
+import com.bootcamp.sprint1.entity.Post;
 import com.bootcamp.sprint1.entity.UserBuyer;
 import com.bootcamp.sprint1.entity.UserSeller;
 import com.bootcamp.sprint1.repository.IUserBuyerRepository;
 import com.bootcamp.sprint1.repository.IUserSellerRepository;
+import com.bootcamp.sprint1.util.Mapper;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -33,22 +35,47 @@ public class UserBuyerServiceImp implements IUserBuyerService{
     }
 
     @Override
-    public FollowedListDTORes getFollowed(Integer userId) {
+    public FollowedListDTORes getFollowed(Integer userId, String order) {
         UserBuyer buyer = userBuyerRepository.findById(userId);
         List<UserSeller> sellers = buyer.getFollowed();
         List<UserDTORes> userDTOResList = sellers.stream().map(e->new UserDTORes(e)).collect(Collectors.toList());
+        if (order.equals("name_asc"))
+            userDTOResList.stream().sorted(Comparator.comparing(UserDTORes::getUser_name));
+        if (order.equals("name_desc"))
+            userDTOResList.stream().sorted(Comparator.comparing(UserDTORes::getUser_name).reversed());
+
         return new FollowedListDTORes(buyer.getUser_id(),buyer.getUser_name(),userDTOResList);
     }
 
     @Override
-    public PostFollowedByDateDTORes getLastPosts(Integer userId) {
+    public PostFollowedByDateDTORes getLastPosts(Integer userId, String order) {
+        UserBuyer buyer= userBuyerRepository.findById(userId);
+        List<UserSeller> followed = buyer.getFollowed();
+        List<PostDTORes> postsFollowed =  new ArrayList<>();
+        for (UserSeller seller: followed) {
+            for ( Post post: seller.getPosts()) {
+                postsFollowed.add(new PostDTORes(seller.getUser_id(),post));
+            }
+        }
 
-        return null;
+        List<PostDTORes> filtradas=postsFollowed.stream().
+                filter(p->p.getDate().isAfter(LocalDate.now().minusWeeks(2))).collect(Collectors.toList());
+
+        //if (order.equals("date_asc"))
+            //filtradas.stream().sorted((d1,d2)->d1.getDate().isAfter(d2.getDate()));
+        //if (order.equals("date_desc"))
+            //filtradas.stream().sorted(Comparator.comparing(PostDTORes::getDate).reversed());
+
+
+        return new PostFollowedByDateDTORes(buyer.getUser_id(), filtradas);
     }
 
     @Override
     public void unfollow(Integer userId, Integer userIdToUnfollow) {
-
+        UserBuyer buyer = userBuyerRepository.findById(userId);
+        UserSeller seller = userSellerRepository.findById(userIdToUnfollow);
+        buyer.getFollowed().remove(seller);
+        seller.getFollowers().remove(buyer);
     }
 
     @Override
@@ -56,8 +83,5 @@ public class UserBuyerServiceImp implements IUserBuyerService{
         return null;
     }
 
-    @Override
-    public FollowedListDTORes getFollowedSortedByName(String order) {
-        return null;
-    }
+
 }

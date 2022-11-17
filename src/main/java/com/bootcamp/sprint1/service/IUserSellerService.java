@@ -8,10 +8,8 @@ public interface IUserSellerService {
 
     FollowerCountDTORes followersCount(Integer userId);
 
-    FollowerListDTORes getFollowers(Integer userId);
+    FollowerListDTORes getFollowers(Integer userId,String order);
 
     void publishPost(PostDTOReq postDTOReq);
-    FollowerListDTORes getFollowersSortedByName(String order);
-
 
 }
