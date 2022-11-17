@@ -10,11 +10,7 @@
             "color": "Color 1",
             "notes": "Notes 1"
         },
-        "category":
-        {
-            "id": 1,
-            "name": "Category 1"
-        },
+        "category": 1,
         "price": 1300.50
     },
     {
@@ -28,11 +24,7 @@
             "color": "Color 2",
             "notes": "Notes 2"
         },
-        "category":
-        {
-            "id": 1,
-            "name": "Category 1"
-        },
+        "category": 2,
         "price": 1300.50
     },
     {
@@ -46,11 +38,7 @@
             "color": "Color 3",
             "notes": "Notes 3"
         },
-        "category":
-        {
-            "id": 2,
-            "name": "Category 2"
-        },
+        "category": 2,
         "price": 2500.13
     },
     {
@@ -64,11 +52,7 @@
             "color": "Color 4",
             "notes": "Notes 4"
         },
-        "category":
-        {
-            "id": 2,
-            "name": "Category 2"
-        },
+        "category": 1,
         "price": 2100.00
     },
     {
@@ -82,11 +66,7 @@
             "color": "Color 5",
             "notes": "Notes 5"
         },
-        "category":
-        {
-            "id": 3,
-            "name": "Category 3"
-        },
+        "category": 3,
         "price": 500.45
     },
     {
@@ -100,11 +80,7 @@
             "color": "Color 6",
             "notes": "Notes 6"
         },
-        "category":
-        {
-            "id": 4,
-            "name": "Category 4"
-        },
+        "category": 3,
         "price": 2700.00
     },
     {
@@ -118,11 +94,7 @@
             "color": "Color 7",
             "notes": "Notes 7"
         },
-        "category":
-        {
-            "id": 2,
-            "name": "Category 2"
-        },
+        "category": 2,
         "price": 950.00
     },
     {
@@ -136,11 +108,7 @@
             "color": "Color 8",
             "notes": "Notes 8"
         },
-        "category":
-        {
-            "id": 4,
-            "name": "Category 4"
-        },
+        "category": 4,
         "price": 350.00
     },
     {
@@ -154,11 +122,7 @@
             "color": "Color 9",
             "notes": "Notes 9"
         },
-        "category":
-        {
-            "id": 2,
-            "name": "Category 2"
-        },
+        "category": 2,
         "price": 450.00
     },
     {
@@ -172,11 +136,7 @@
             "color": "Color 10",
             "notes": "Notes 10"
         },
-        "category":
-        {
-            "id": 3,
-            "name": "Category 3"
-        },
+        "category": 3,
         "price": 4500.00
     }
 
