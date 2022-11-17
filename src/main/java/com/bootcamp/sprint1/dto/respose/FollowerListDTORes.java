@@ -10,6 +10,8 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
-public class FollowerListDTORes extends UserDTORes {
+public class FollowerListDTORes {
+    private Integer user_id;
+    private String user_name;
     private List<UserDTORes> followers;
 }

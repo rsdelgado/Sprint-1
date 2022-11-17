@@ -1,5 +1,5 @@
 package com.bootcamp.sprint1.repository;
 
-public interface IPostRepository extends ICrudRepository{
+public interface IPostRepository{
 
 }

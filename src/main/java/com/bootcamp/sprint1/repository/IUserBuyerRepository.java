@@ -1,5 +1,8 @@
 package com.bootcamp.sprint1.repository;
 
-public interface IUserBuyerRepository extends ICrudRepository{
+import com.bootcamp.sprint1.entity.UserBuyer;
+
+public interface IUserBuyerRepository{
+    UserBuyer findById(Integer id);
 
 }

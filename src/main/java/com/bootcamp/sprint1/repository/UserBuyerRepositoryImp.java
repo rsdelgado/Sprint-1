@@ -1,6 +1,5 @@
 package com.bootcamp.sprint1.repository;
 
-import com.bootcamp.sprint1.entity.Post;
 import com.bootcamp.sprint1.entity.UserBuyer;
 import com.bootcamp.sprint1.util.Mapper;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -19,25 +18,12 @@ public class UserBuyerRepositoryImp implements IUserBuyerRepository{
         loadBuyers();
     }
 
-    @Override
-    public Object create(Object o) {
-        return null;
-    }
 
     @Override
-    public List findAll() {
-        return null;
+    public UserBuyer findById(Integer id) {
+        return buyers.stream().filter(buyer -> buyer.getUser_id().equals(id)).findFirst().get();
     }
 
-    @Override
-    public Object delete(Object o) {
-        return null;
-    }
-
-    @Override
-    public Object findById(Object o) {
-        return null;
-    }
 
     private void loadBuyers(){
         File jsonFile= null;
@@ -48,4 +34,5 @@ public class UserBuyerRepositoryImp implements IUserBuyerRepository{
             System.out.println("Buyers not found " + ex.getMessage());
         }
     }
+
 }

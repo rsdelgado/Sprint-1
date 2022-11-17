@@ -4,7 +4,9 @@ import com.bootcamp.sprint1.dto.respose.FollowerCountDTORes;
 import com.bootcamp.sprint1.dto.respose.FollowerListDTORes;
 
 public interface IUserSellerService {
-    FollowerCountDTORes followers(Integer userId);
+
+    FollowerCountDTORes followersCount(Integer userId);
+
     FollowerListDTORes getFollowers(Integer userId);
     FollowerListDTORes getFollowersSortedByName(String order);
 

@@ -2,7 +2,7 @@
     {
         "user_id": 1,
         "user_name": "Josep",
-        "followed":[            
+        "followed":[
         ]
     },
     {
@@ -28,5 +28,5 @@
         "user_name": "Raquel",
         "followed":[            
         ]
-    },
+    }
 ]

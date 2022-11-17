@@ -1,5 +1,6 @@
 package com.bootcamp.sprint1.repository;
 
+import com.bootcamp.sprint1.dto.respose.FollowerListDTORes;
 import com.bootcamp.sprint1.entity.UserBuyer;
 import com.bootcamp.sprint1.entity.UserSeller;
 import com.bootcamp.sprint1.util.Mapper;
@@ -19,25 +20,10 @@ public class UserSellerRepositoryImp implements IUserSellerRepository{
         loadSellers();
     }
 
-    @Override
-    public Object create(Object o) {
-        return null;
+    public UserSeller findById(Integer id) {
+        return sellers.stream().filter(buyer -> buyer.getUser_id().equals(id)).findFirst().get();
     }
 
-    @Override
-    public List findAll() {
-        return null;
-    }
-
-    @Override
-    public Object delete(Object o) {
-        return null;
-    }
-
-    @Override
-    public Object findById(Object o) {
-        return null;
-    }
 
     private void loadSellers(){
         File jsonFile= null;

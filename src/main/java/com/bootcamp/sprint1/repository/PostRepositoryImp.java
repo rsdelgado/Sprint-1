@@ -18,25 +18,6 @@ public class PostRepositoryImp implements IPostRepository{
         loadPosts();
     }
 
-    @Override
-    public Object create(Object o) {
-        return null;
-    }
-
-    @Override
-    public List findAll() {
-        return null;
-    }
-
-    @Override
-    public Object delete(Object o) {
-        return null;
-    }
-
-    @Override
-    public Object findById(Object o) {
-        return null;
-    }
 
     private void loadPosts(){
         File jsonFile= null;
