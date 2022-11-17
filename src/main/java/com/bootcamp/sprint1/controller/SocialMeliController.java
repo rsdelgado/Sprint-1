@@ -1,6 +1,7 @@
 package com.bootcamp.sprint1.controller;
 
 import com.bootcamp.sprint1.dto.respose.FollowerCountDTORes;
+import com.bootcamp.sprint1.dto.respose.FollowerListDTORes;
 import com.bootcamp.sprint1.service.IUserBuyerService;
 import com.bootcamp.sprint1.service.IUserSellerService;
 import org.springframework.http.HttpStatus;
@@ -30,5 +31,10 @@ public class SocialMeliController {
     @GetMapping("/users/{userId}/followers/count")
     public ResponseEntity<FollowerCountDTORes> followersCount(@PathVariable Integer userId){
         return new ResponseEntity<>(userSellerService.followersCount(userId),HttpStatus.OK);
+    }
+
+    @GetMapping("/users/{userId}/followers/list")
+    public ResponseEntity<FollowerListDTORes> getFollowers(@PathVariable Integer userId){
+        return new ResponseEntity<>(userSellerService.getFollowers(userId),HttpStatus.OK);
     }
 }
