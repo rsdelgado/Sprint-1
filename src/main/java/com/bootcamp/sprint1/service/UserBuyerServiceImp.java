@@ -4,6 +4,7 @@ import com.bootcamp.sprint1.dto.respose.*;
 import com.bootcamp.sprint1.entity.Post;
 import com.bootcamp.sprint1.entity.UserBuyer;
 import com.bootcamp.sprint1.entity.UserSeller;
+import com.bootcamp.sprint1.exception.BadRequestException;
 import com.bootcamp.sprint1.repository.IUserBuyerRepository;
 import com.bootcamp.sprint1.repository.IUserSellerRepository;
 import com.bootcamp.sprint1.util.Sorter;
@@ -40,6 +41,8 @@ public class UserBuyerServiceImp implements IUserBuyerService{
         List<UserDTORes> userDTOResList = sellers.stream().map(e->new UserDTORes(e)).collect(Collectors.toList());
         if (!order.equals("invalid"))
             Sorter.sortedByName(userDTOResList,order);
+        else
+            throw new BadRequestException("Enter 'name_asc' for ascending alphabetical ordering or 'name_desc' for descending ordering.");
         return new FollowedListDTORes(buyer.getUser_id(),buyer.getUser_name(),userDTOResList);
     }
 
