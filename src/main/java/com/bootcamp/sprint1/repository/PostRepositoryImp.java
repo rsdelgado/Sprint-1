@@ -19,9 +19,10 @@ public class PostRepositoryImp implements IPostRepository{
     }
 
     public void createPost(Post post){
-        if(posts.isEmpty()){
+        if(posts.isEmpty())
             post.setPost_id(1);
-        } else post.setPost_id(posts.get(posts.size()-1).getPost_id()+1);
+        else
+            post.setPost_id(posts.get(posts.size()-1).getPost_id()+1);
         posts.add(post);
     }
     private void loadPosts(){

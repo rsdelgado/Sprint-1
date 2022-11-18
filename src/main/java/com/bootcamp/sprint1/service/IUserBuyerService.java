@@ -14,7 +14,4 @@ public interface IUserBuyerService {
 
     void unfollow(Integer userId, Integer userIdToUnfollow);
 
-    PostFollowedByDateDTORes getLastPostsSortedDate(String order);
-
-
 }

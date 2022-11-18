@@ -1,6 +1,5 @@
 package com.bootcamp.sprint1.dto.respose;
 
-import com.bootcamp.sprint1.dto.request.ProductDTOReq;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

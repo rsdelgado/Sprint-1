@@ -1,8 +1,6 @@
 package com.bootcamp.sprint1.dto.respose;
 
-import com.bootcamp.sprint1.dto.request.ProductDTOReq;
 import com.bootcamp.sprint1.entity.Post;
-import com.bootcamp.sprint1.util.Mapper;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

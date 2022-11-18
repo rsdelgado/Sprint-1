@@ -1,7 +1,5 @@
 package com.bootcamp.sprint1.repository;
 
-import com.bootcamp.sprint1.dto.respose.FollowerListDTORes;
-import com.bootcamp.sprint1.entity.UserBuyer;
 import com.bootcamp.sprint1.entity.UserSeller;
 import com.bootcamp.sprint1.util.Mapper;
 import com.fasterxml.jackson.core.type.TypeReference;
